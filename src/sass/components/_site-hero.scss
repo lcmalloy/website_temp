@@ -1,0 +1,52 @@
+@use '../abstracts/' as *;
+
+.hero-images {
+    display: flex;
+    column-gap: var(--flex-column-gap, $flex-group-gap);
+    width: fit-content;
+    align-items: center;
+}
+
+.hero-image {
+    flex:1;
+    border-radius: 90px;
+    overflow:hidden;
+}
+
+.active-true {
+    transition-duration: 1s;
+    transition: height 1s;
+    height: 20rem;
+}
+
+
+.active-false {
+    height: 15rem;
+}
+
+.hero-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === Enter Transition === */
+.hero-transition-enter {
+    opacity: 0;
+}
+.hero-transition-enter-active {
+    transition: opacity 500ms;
+}
+.hero-transition-enter-done {
+    opacity: 1;
+}
+
+/* === Exit Transition === */
+.hero-transition-exit {
+    opacity: 1;
+}
+.hero-transition-exit-active {
+    transition: opacity 500ms;
+}
+.hero-transition-exit-done {
+    opacity: 0;
+}

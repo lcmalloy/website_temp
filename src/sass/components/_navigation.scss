@@ -6,12 +6,40 @@
   font-family: $navigation-font-family;
   font-weight: $navigation-font-weight;
 
-  a {
+  li {
     color: $navigation-color;
-    text-decoration: $navigation-link-text-decoration;
+    transition: color .25s ease;
 
-    &:is(:hover, :focus) {
+    &:is(:hover, :focus){
       color: $navigation-color-hover;
     }
+
+    & > a {
+      color: inherit;
+      text-decoration: $navigation-link-text-decoration;
+    }
+
+    & > svg {
+      margin-left: 0.125em;
+      transition: transform .5s ease;
+    }
+
+    &:is(:hover, :focus) > svg {
+      transform: rotate(180deg)
+    }
   }
+
+  // a {
+  //   color: $navigation-color;
+  //   text-decoration: $navigation-link-text-decoration;
+
+  //   &:is(:hover, :focus) {
+  //     color: $navigation-color-hover;
+  //   }
+  // }
+
+  // .nav-icon {
+  //   color: $navigation-color;
+  //   margin-left: .125em;
+  // }
 }

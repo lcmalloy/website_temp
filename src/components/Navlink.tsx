@@ -15,7 +15,7 @@ const Navlink = (props: NavlinkProps) => {
       <li className="text-center" key={`--navlink-${linkDetails.path}`}>
         <Link to={`/${path}`}>{linkDetails.path}</Link>
         {linkDetails.isDropdownMenu && (
-            <FontAwesomeIcon icon={faChevronDown} />
+            <FontAwesomeIcon className="nav-icon" icon={faChevronDown} />
         )}
       </li>
     </div>
