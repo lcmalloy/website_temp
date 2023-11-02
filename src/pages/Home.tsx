@@ -1,4 +1,5 @@
-import {useState} from 'react'; 
+import {useState} from 'react';
+import {motion} from "framer-motion"
 import { Pills } from '../components/Pills'
 
 export const Home = () => {
@@ -10,9 +11,23 @@ const updateHeroText = (e) => {
 
 }
 
-
 const resetText = () => {
   setHeroText('One Platform');
+}
+
+const variants = {
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: 'easeOut',
+      duration: 0.8,
+    },
+  },
+  hide: {
+    y: -20,
+    opacity: 0,
+  },
 }
 
   return (
@@ -22,9 +37,11 @@ const resetText = () => {
           <div className="even-columns">
             <div className="flow">
               <h1 className="heading-1">
-                <span className="clr-primary-400">
-                {isHeroText}
-                </span>
+                <motion.div key={isHeroText} variants={variants} animate={"show"} initial="hide">
+                  <span className="clr-primary-400">
+                  {isHeroText}
+                  </span>
+                </motion.div>
                 <br />
                 built for business
               </h1>
